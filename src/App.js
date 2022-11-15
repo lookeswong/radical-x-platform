@@ -1,10 +1,10 @@
 import React from "react";
-import Internship from "./pages/Internship";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div>
-      <Internship />
+      <Home />
     </div>
   );
 }

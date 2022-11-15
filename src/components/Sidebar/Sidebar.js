@@ -2,13 +2,13 @@ import React from "react";
 import "./Sidebar.css";
 
 // Images imports
-import radicalXLogo from "../images/radicalX-logo.png";
-import book from "../images/book.svg"; 
-import dashboard from "../images/dashboard-3.svg";
-import briefcase from "../images/briefcase.svg";
-import medalStar from "../images/medal-star.svg";
-import setting from "../images/setting-2.svg";
-import rectangleAvatar from "../images/rectangle-avatar.svg";
+import radicalXLogo from "../../images/radicalX-logo.png";
+import book from "../../images/book.svg"; 
+import dashboard from "../../images/dashboard-3.svg";
+import briefcase from "../../images/briefcase.svg";
+import medalStar from "../../images/medal-star.svg";
+import setting from "../../images/setting-2.svg";
+import rectangleAvatar from "../../images/rectangle-avatar.svg";
 
 export default function Sidebar() {
   return (
