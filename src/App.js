@@ -1,8 +1,11 @@
-import './App.css';
+import React from "react";
+import Internship from "./pages/Internship";
 
 function App() {
   return (
-    <div>Hello World</div>
+    <div>
+      <Internship />
+    </div>
   );
 }
 

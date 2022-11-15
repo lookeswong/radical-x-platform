@@ -1,5 +1,9 @@
+/* All Global Styles go here */
+
+/* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
 
+/* Global Style Variables */
 :root {
   --color-snow: #ffffff;
   --color-purple: #793ef5;
@@ -13,12 +17,20 @@
   --color-field-stroke: #cecece;
 }
 
+/* How to use these global color variables? 
+    body { 
+        background-color: var(--color-purple); 
+    }
+*/
+
+/* Universal CSS reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Reset body styling */
 body {
   font-family: "Space Grotesk", sans-serif;
   background-color: var(--color-gray-50);
