@@ -1,0 +1,88 @@
+.container--insights {
+  background-color: var(--color-snow);
+  padding: 1em;
+  margin: 1.5em 0;
+  border-radius: 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.container--insights-text {
+  background-color: #F6F5F9;
+  padding: 1em;
+  border-radius: 16px;
+  max-width: 20em;
+}
+
+.container--insights-text > p {
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-size: 0.875em;
+}
+
+.container--insights-chart {
+  margin: 1em 0.625em;
+  grid-column: 2 / span 2;
+}
+
+.insights-chart-header {
+  display: flex;
+  font-size: 0.875em;
+  background-color: #f2f2f2;
+  padding: 0.5em;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.insights-chart-header > .header-btn {
+  display: flex;
+}
+
+span {
+  background-color: var(--color-snow);
+  border-radius: 8px;
+  margin-right: 12px;
+  text-align: center;
+  width: 6.5em;
+  line-height: 2em;
+}
+
+.header-btn-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-snow);
+  border-radius: 8px;
+}
+
+.header-btn-date img {
+  padding-left: 0.7em;
+}
+
+.insights-chart-graph {
+  padding-top: 1em;
+  margin-left: 0.75em;
+}
+
+.insights-chart-graph > img {
+  width: 100%;
+  height: auto;
+}
+
+.insights-chart-graph >.graph-axis {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 0.2em;
+}
+
+.graph-axis > .axis-text {
+  line-height: 1.35em;
+}
+
+.graph-axis > .axis-text > p {
+  font-size: 0.75em;
+}

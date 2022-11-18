@@ -1,5 +1,6 @@
 import React from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
+import Insights from "../components/Insights/Insights";
 
 import addSquare from "../images/add-square.svg";
 import "../styles/home.css";
@@ -16,8 +17,9 @@ export default function Home() {
             Create a new Internship
           </button>
         </div>
-        {/* Graph component here */}
-        {/* list component here */}
+        {/* Insights component here */}
+        <Insights />
+        {/* Internship list component here */}
       </div>
     </div>
   )
