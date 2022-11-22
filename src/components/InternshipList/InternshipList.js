@@ -8,18 +8,20 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { borders } from '@mui/system';
+import { border, borders } from '@mui/system';
 
 // images import
 import imgQC from '../../images/qualified-candidates.svg';
 import chart from '../../images/chart.svg';
 import more from '../../images/more-2.svg';
 import profile from '../../images/profile-2user.svg';
+import arrowDown from '../../images/arrow-square-down.svg';
 
 import './InternshipList.css';
 
 export default function InternshipList() {
 
+  // mock data to render on screen
   const [mockData, setMockData] = useState([
     {
       name: "Product Design GVI",
@@ -77,42 +79,59 @@ export default function InternshipList() {
     }
   ]);
 
+
   return (
-    <TableContainer component={Paper} sx={{maxHeight: '450px'}}>
+    <TableContainer sx={{maxHeight: '450px'}}>
       <Table 
-        sx={{ minWidth: 650 }} 
+        sx={{ minWidth: 650, backgroundColor: '#fff', borderRadius: '20px'}} 
         aria-label="internship-table"
         stickyHeader
       >
-        <TableHead>
-          <TableRow className="list--internship-header">
-            <TableCell 
-              className="internship-header-title" 
-              sx={{fontFamily: 'Space Grotesk', backgroundColor: "#f6f5f9"}}
+        <TableHead style={{}}>
+          <TableRow sx={{}}>
+            <TableCell
+              sx= {{
+                backgroundColor: '#f4f5f9', 
+                borderTopLeftRadius: '20px',
+              }}
+              className="internship-title-header"
             >
-              Internship Title
+              <p>Internship Title <img src={arrowDown} alt=""/></p> 
             </TableCell>
-            <TableCell 
-              className="internship-header-completion" 
-              sx={{ fontFamily: 'Space Grotesk', backgroundColor: "#f6f5f9" }}
+            <TableCell
+              className="internship-completion-header"
               align="left"
+              sx={{
+                backgroundColor: '#f4f5f9',
+                border: '0.01'
+              }}
             >
-              Completion Period
+              <p>Completion Period <img src={arrowDown} alt=""/></p>
             </TableCell>
-            <TableCell 
-              className="internship-header-enrolled" 
-              sx={{ fontFamily: 'Space Grotesk', backgroundColor: "#f6f5f9" }}
+            <TableCell
+              className="internship-enrolled-header"
               align="left"
+              sx={{
+                backgroundColor: '#f4f5f9',
+                border: '0.02',
+              }}
             >
-              Total Enrolled
+              <p>Total Enrolled <img src={arrowDown} alt=""/></p>
+
             </TableCell>
-            <TableCell 
-              className="internship-header-candidates" 
-              sx={{ fontFamily: 'Space Grotesk', backgroundColor: "#f6f5f9" }}
+            <TableCell
+              className="internship-candidates-header"
+              sx={{
+                backgroundColor: '#f4f5f9',
+                border: '0.03'
+              }}
             >
-              Qualified Candidates
+              <p>Qualified Candidates <img src={arrowDown} alt=""/></p>
             </TableCell>
-            <TableCell className="internship-header-img" sx={{backgroundColor: "#f6f5f9"}}></TableCell>
+            <TableCell sx={{
+              backgroundColor: '#f4f5f9', 
+              borderTopRightRadius: '20px', 
+            }}></TableCell>
           </TableRow>
         </TableHead>
         <TableBody >
@@ -123,13 +142,18 @@ export default function InternshipList() {
                 '&:last-child td, &:last-child th': { border: 0 },
               }}
             >
-              <TableCell sx={{ fontFamily: 'Space Grotesk' }} className="list--internship-title">
-                <h3>{data.name}</h3>
-                <p>{data.description}</p>
+              <TableCell sx={{ fontFamily: 'Space Grotesk' }}>
+                <h3 className="internship-name">{data.name}</h3>
+                <p className="internship-description">{data.description}</p>
               </TableCell>
-              <TableCell className="list--internship-completion" sx={{ fontFamily: 'Space Grotesk' }} align="left"><p>{data.days}</p></TableCell>
-              <TableCell className="list--internship-enrolled" sx={{ fontFamily: 'Space Grotesk' }} align="left"><p>{data.enrolled}</p></TableCell>
-              <TableCell className="list--internship-candidates" align="left">
+              <TableCell sx={{ fontFamily: 'Space Grotesk' }} align="left">
+                <p className="internship-days">{data.days} days</p>
+                <p className="internship-date-created">(created on 10/12/2021)</p>
+              </TableCell>
+              <TableCell sx={{ fontFamily: 'Space Grotesk' }} align="left">
+                <p className="internship-enrolled">{data.enrolled}</p>
+              </TableCell>
+              <TableCell align="left">
                 <img src={imgQC} alt=""/>
               </TableCell>
               <TableCell className="list-img">

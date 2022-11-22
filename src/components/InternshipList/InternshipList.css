@@ -1,5 +1,47 @@
-.list--internship-header {
-  background-color: #f6f5f9;
+.internship-title-header > p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.internship-completion-header > p{
+  display: flex;
+  justify-content: space-between;
+}
+
+.internship-enrolled-header > p{
+  display: flex;
+  justify-content: space-between;
+}
+
+.internship-candidates-header > p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.internship-name {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.internship-days {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.internship-date-created {
+  color: #828282;
+  font-size: 0.9em;
+}
+
+.internship-enrolled {
+  color: var(--color-purple);
+  font-size: 1.2em;
+  font-weight: 500;
+  background-color: rgba(102, 95, 239, 0.2);
+  text-align: center;
+  border-radius: 10px;
+  width: 70%;
+  padding: 0.3em;
 }
 
 .list-img > img {
