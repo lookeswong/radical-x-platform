@@ -4,16 +4,53 @@ import './Insights.css';
 
 import calender from '../../images/calendar-2.svg';
 import chart from '../../images/Vector 4.svg';
+import { nanoid } from "nanoid";
 
 export default function Insights() {
+  // Old Button setup
   // Is this good react practices? setting up 2 different state?
-  const [weekButton, setWeekButton] = useState(true);
-  const [monthButton, setMonthButton] = useState(false)
+  // const [weekButton, setWeekButton] = useState(true);
+  // const [monthButton, setMonthButton] = useState(false)
 
-  const handleChange = () => {
-    setWeekButton(prevState => !prevState)
-    setMonthButton(prevState => !prevState)
-    // console.log(button)
+  // const handleChange = () => {
+  //   setWeekButton(prevState => !prevState)
+  //   setMonthButton(prevState => !prevState)
+  //   // console.log(button)
+  // }
+
+  const [buttons, setButtons] = useState([
+    {
+      name: 'This week',
+      // isSelected: true,
+      id: nanoid()
+    },
+    {
+      name: 'This month',
+      // isSelected: false,
+      id: nanoid()
+    }
+  ]);
+
+  // const buttons = [
+  //   {
+  //     name: 'This week',
+  //     id: nanoid()
+  //   },
+  //   {
+  //     name: 'This month',
+  //     id: nanoid()
+  //   }]
+
+  // useState to track which button is currently selecteds
+  const [currentButtonId, setCurrentButtonId] = useState(
+    (buttons[0] && buttons[0].id) || ""
+  )
+
+  // function that updates the currentButtonId when clicked
+  const handleClick = (id) => {
+    // console.log(currentButtonId)
+    setCurrentButtonId(id) 
+    // console.log(currentButtonId)
   }
 
   return (
@@ -24,10 +61,12 @@ export default function Insights() {
       </div>
       <div className="container--insights-chart">
         <div className="insights-chart-header">
-          <div className="header-btn">
+          <div>
+            {/* old button set up */}
             {/* COME BACK AND FIX THIS, RIGHT NOW BOTH BUTTON LIGHT UP AT THE SAME TIME - FIXED */}
-            <Button name="This week" isSelected={weekButton} handleClick={handleChange}/>
-            <Button name="This month" isSelected={monthButton} handleClick={handleChange}/>
+            {/* <Button name="This week" isSelected={weekButton} handleClick={handleChange}/>
+            <Button name="This month" isSelected={monthButton} handleClick={handleChange}/> */}
+            <Button buttons={buttons} currentId={currentButtonId} onClick={handleClick}/>
           </div>
           <div className="header-btn-date">
             <img src={calender} alt="calender logo"/>

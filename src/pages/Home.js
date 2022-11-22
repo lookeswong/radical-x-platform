@@ -5,7 +5,7 @@ import InternshipList from "../components/InternshipList/InternshipList";
 
 // images import
 import addSquare from "../images/add-square.svg";
-import arrowDown from "../images/arrow-square-down.svg";
+// import arrowDown from "../images/arrow-square-down.svg";
 import "../styles/home.css";
 
 export default function Home() {

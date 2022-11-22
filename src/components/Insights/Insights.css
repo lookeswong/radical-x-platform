@@ -37,10 +37,6 @@
   width: 100%;
 }
 
-.insights-chart-header > .header-btn {
-  display: flex;
-}
-
 span {
   background-color: var(--color-snow);
   border-radius: 8px;

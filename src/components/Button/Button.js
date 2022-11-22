@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+
+import './Button.css';
 
 export default function Button(props) {
-  const styles = {
-    backgroundColor: props.isSelected ? "#793ef5" : "#ffffff",
-    color: props.isSelected ? "#ffffff" : "#1e1e1e"
-  }
+  
+  const buttonsElements = props.buttons.map(button => (
+    <div className="btn-element" key={button.id} >
+      <div 
+        className={button.id === props.currentId ? "selectedButton" : "notSelected"} 
+        onClick={() => props.onClick(button.id)}
+      >
+        <p className="button-text">{button.name}</p>
+      </div>
+    </div>
+  ))
 
   return (
-    <span 
-      style={styles} 
-      onClick={props.handleClick}
-    >
-      {props.name}
-    </span>
+    <div className="header-btn">
+      {buttonsElements}
+    </div>
   )
+
 }

@@ -1,0 +1,24 @@
+
+
+.header-btn {
+  display: flex;
+  color: var(--color-snow);
+}
+
+.btn-element {
+  padding: 0.5em;
+  border-radius: 20px;
+}
+
+.selectedButton {
+  background-color: var(--color-purple);
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+.notSelected {
+  background-color: var(--color-snow);
+  padding: 0.5em;
+  border-radius: 10px;
+  color: black;
+}
