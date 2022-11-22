@@ -25,7 +25,7 @@ export default function Insights() {
       <div className="container--insights-chart">
         <div className="insights-chart-header">
           <div className="header-btn">
-            {/* COME BACK AND FIX THIS, RIGHT NOW BOTH BUTTON LIGHT UP AT THE SAME TIME */}
+            {/* COME BACK AND FIX THIS, RIGHT NOW BOTH BUTTON LIGHT UP AT THE SAME TIME - FIXED */}
             <Button name="This week" isSelected={weekButton} handleClick={handleChange}/>
             <Button name="This month" isSelected={monthButton} handleClick={handleChange}/>
           </div>
@@ -35,8 +35,8 @@ export default function Insights() {
           </div>
         </div>
         <div className="insights-chart-graph">
-          {/* GRAPH GOES HERE */}
-          <img src={chart}/>
+          {/* MAKE THIS DYNAMIC AFTERWARDS */}
+          <img src={chart} alt=""/>
           <div className="graph-axis">
             <div className="axis-text">
               <h3>100,000</h3>

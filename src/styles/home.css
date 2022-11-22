@@ -29,3 +29,36 @@
   border: 1px solid var(--color-purple);
 }
 
+/* .container--internship-list > .list-header {
+  display: flex;
+  padding: 1em; 
+  font-size: 0.875em;
+  background-color: #f6f5f9;
+  border-radius: 20px 20px 0px 0px;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0.75em;
+  margin-left: 1em;
+}
+
+.completion {
+  display: flex;
+  justify-content: space-between;  
+  padding: 1em 0.75em;
+}
+
+.enrolled {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0.75em;
+}
+
+.candidates {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0.75em;
+} */

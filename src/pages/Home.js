@@ -1,8 +1,11 @@
 import React from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Insights from "../components/Insights/Insights";
+import InternshipList from "../components/InternshipList/InternshipList";
 
+// images import
 import addSquare from "../images/add-square.svg";
+import arrowDown from "../images/arrow-square-down.svg";
 import "../styles/home.css";
 
 export default function Home() {
@@ -20,6 +23,31 @@ export default function Home() {
         {/* Insights component here */}
         <Insights />
         {/* Internship list component here */}
+        <div className="container--internship-list">
+          {/* OLD HEADER */}
+          {/* <div className="list-header">
+            <div className="title">
+              <p>Internship Title</p>
+              <img src={arrowDown} alt=""/>
+            </div>
+            <div className="completion">
+              <p>Completion Period</p>
+              <img src={arrowDown} alt=""/>
+            </div>
+            <div className="enrolled">
+              <p>Total Enrolled</p>
+              <img src={arrowDown} alt=""/>
+            </div>
+            <div className="candidates">
+              <p>Qualified Candidates</p>
+              <img src={arrowDown} alt=""/>
+            </div>
+            <div></div>
+          </div> */}
+          <div className="internship-list">
+            <InternshipList />
+          </div>
+        </div>
       </div>
     </div>
   )
