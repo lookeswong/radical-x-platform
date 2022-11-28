@@ -1,0 +1,19 @@
+.container--internship-description {
+  display: grid;
+  grid-template-columns: 45% 55%;
+}
+
+.add-internship-button {
+  border: 1px dashed var(--color-purple);
+  border-radius: 1em;
+  background-color: transparent;
+  color: var(--color-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0.5em 3em;
+  padding: 1em 1em;
+  width: 93%;
+  cursor: pointer;
+}
