@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Sidebar.css";
 
 // Images imports
@@ -16,27 +18,34 @@ export default function Sidebar() {
       <div className="container--sidebar">
         <div className="container--sidebar-nav">
           <img className="sidebar-logo" src={radicalXLogo} alt="radicalX logo"/> 
-          {/* Nav link here */}
-          <div className="nav-link">
-            <img className="nav-icon" src={dashboard} alt="dashboard logo"/>
-            <p className="nav-text">Dashboard</p>
-          </div>
-          <div className="nav-link">
-            <img className="nav-icon" src={medalStar} alt="medalStar logo"/>
-            <p className="nav-text">Apprenterships</p>
-          </div>
+          <Link to="*" className="link">
+            <div className="nav-link">
+              <img className="nav-icon" src={dashboard} alt="dashboard logo"/>
+              <p className="nav-text">Dashboard</p>
+            </div>
+          </Link>
+          <Link to="*" className="link">
+            <div className="nav-link">
+              <img className="nav-icon" src={medalStar} alt="medalStar logo"/>
+              <p className="nav-text">Apprenterships</p>
+            </div>
+          </Link>
           <div className="nav-link selected">
             <img className="nav-icon" src={book} alt="book logo"/>
             <p className="nav-text">Internships</p>
           </div>
-          <div className="nav-link">
-            <img className="nav-icon" src={briefcase} alt="briefcase logo"/>
-            <p className="nav-text">Jobs</p>
-          </div>
-          <div className="nav-link">
-            <img className="nav-icon" src={setting} alt="setting logo"/>
-            <p className="nav-text">Settings</p>
-          </div>
+          <Link to="*"  className="link">
+            <div className="nav-link">
+              <img className="nav-icon" src={briefcase} alt="briefcase logo"/>
+              <p className="nav-text">Jobs</p>
+            </div>
+          </Link>
+          <Link to="*"  className="link">
+            <div className="nav-link">
+              <img className="nav-icon" src={setting} alt="setting logo"/>
+              <p className="nav-text">Settings</p>
+            </div>
+          </Link>
         </div>
         <div className="container--sidebar-footer">
           <img className="footer-avatar" src={rectangleAvatar} alt="user pic"/>

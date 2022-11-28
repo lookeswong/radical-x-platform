@@ -11,7 +11,15 @@ export default function Card(props) {
       <div className='card-image'>
         <img src={menuLogo} alt=""/>
       </div>
-      <div className='card-text'>
+      {/* Old code */}
+      {/* <div className='card-text'>
+        <p>{props.name}</p>
+        <img src={rightArrow} alt=""/>
+      </div> */}
+      <div
+        className={props.isSelected ? "selected-card" : "card-text"}
+        onClick={() => <></>}
+      >
         <p>{props.name}</p>
         <img src={rightArrow} alt=""/>
       </div>

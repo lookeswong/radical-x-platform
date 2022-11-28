@@ -20,31 +20,31 @@ export default function InternshipCards() {
     },
     {
       name: "Description",
-      isSelected: true,
+      isSelected: false,
     },
     {
       name: "Location",
-      isSelected: true,
+      isSelected: false,
     },
     {
       name: "Benefits",
-      isSelected: true,
+      isSelected: false,
     },
     {
       name: "Intro Video",
-      isSelected: true,
+      isSelected: false,
     },
     {
       name: "Mentor Details",
-      isSelected: true,
+      isSelected: false,
     },
     {
       name: "Recommended Roles",
-      isSelected: true,
+      isSelected: false,
     },
     {
       name: "Web Links & Resources",
-      isSelected: true,
+      isSelected: false,
     },
   ])
 

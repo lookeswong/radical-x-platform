@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Sidebar from "../components/Sidebar/Sidebar";
 import Insights from "../components/Insights/Insights";
 import InternshipList from "../components/InternshipList/InternshipList";
@@ -15,10 +17,16 @@ export default function Home() {
       <div className="container--main-content">
         <div className="header">
           <h2>Internships</h2>
-          <button className="internship-create-button">
+          {/* <button className="internship-create-button">
             <img src={addSquare} alt="square logo"/>
             Create a new Internship
-          </button>
+          </button> */}
+          <Link to="/add-new-internship" style={{textDecoration: "none", }}>
+            <button className="internship-create-button">
+              <img src={addSquare} alt="square logo"/>
+              Create a new Internship
+            </button>
+          </Link>
         </div>
         {/* Insights component here */}
         <Insights />
