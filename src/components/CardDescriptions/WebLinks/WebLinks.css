@@ -1,0 +1,52 @@
+.container--web-links {
+  background-color: var(--color-snow);
+  border-radius: 1em;
+  padding: 1em 1em;
+  margin: 0.5em 1em;
+}
+
+.container--web-links>p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.web-links-form {
+  display: flex;
+  margin: 1em 0em;
+  align-items: center;
+}
+
+.link-icon {
+  position: relative;
+  left: 1em;
+}
+
+.search-icon {
+  position: relative;
+  right: 1.5em;
+}
+
+.web-links-form>input {
+  background-color: var(--color-gray-10);
+  color: rgba(47, 48, 49, 0.54);
+  font-family: "Space Grotesk", sans-serif;
+  border: 1px solid var(--color-field-stroke);
+  border-radius: 0.8em;
+  padding: 1em 2.5em;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0em -1.1em;
+}
+
+.container--web-links>button {
+  display: flex;
+  align-items: center;
+  border: 1px dashed var(--color-purple);
+  border-radius: 1em;
+  color: var(--color-purple);
+  background-color: transparent;
+  padding: 0.5em 1em;
+  gap: 0.5em;
+  font-size: 1rem;
+  font-weight: 500;
+}

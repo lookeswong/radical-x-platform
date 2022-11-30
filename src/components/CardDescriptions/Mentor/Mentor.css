@@ -1,0 +1,68 @@
+.container--mentor {
+  background-color: var(--color-snow);
+  border-radius: 1em;
+  padding: 1em 1em;
+  margin: 0.5em 1em;
+}
+
+.container--mentor>p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.mentor-img {
+  background-color: var(--color-gray-50);
+  border-radius: 1em;
+  height: 70px;
+  width: 70px;
+  margin: 0.5em 0em;
+}
+
+.container--image-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2153ff;
+  border-radius: 0.4em;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  left: 50px;
+  top: 50px;
+}
+
+.mentor-form {
+  margin-left: -0.5em;
+}
+
+.mentor-form-upper{
+  display: flex;
+  justify-content: space-between;
+  /* gap: 1.5em; */
+}
+
+.mentor-form input {
+  padding: 1em 3em;
+  margin: 0.5em 0.5em;
+  width: 100%;
+  border: 1px solid var(--color-field-stroke);
+  border-radius: 1em;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+}
+
+.name-input, .email-input, .linkedin-input {
+  display: flex;
+  width: 100%;
+  margin-left: -1.3em
+}
+
+.linkedin-input > input {
+  margin-right: -1em;
+}
+
+.name-input > img, .email-input>img, .linkedin-input>img {
+  position: relative;
+  left: 50px;
+}
+
