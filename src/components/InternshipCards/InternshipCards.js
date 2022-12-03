@@ -1,5 +1,7 @@
 import React, {useState } from 'react';
 import Card from '../Card/Card';
+import CardDesc from '../CardDescriptions/CardDesc';
+
 
 // Hidden components
 import Category from '../CardDescriptions/Category/Category';
@@ -56,7 +58,6 @@ export default function InternshipCards() {
 
   // Mapping card objects to keys
   const CardObjectKeys = Object.keys(cardObjects);
-  console.log(CardObjectKeys);
 
   const CardComponent = cardObjects[hidden] ? cardObjects[hidden].component : null;
 
@@ -147,18 +148,6 @@ export default function InternshipCards() {
             onClick={() => handleClick(itemKey)}
           />
         ))}
-
-        {/* Old code that render a list of card components */}
-        {/* {internshipElements}  */}
-        {/* <Card name="Category" onClick={handleClick}/>
-        <Card name="Description" onClick={handleClick}/>
-        <Card name="Location" onClick={handleClick}/>
-        <Card name="Benefits" onClick={handleClick}/>
-        <Card name="Intro Video" onClick={handleClick}/>
-        <Card name="Mentor Details" onClick={handleClick}/>
-        <Card name="Recommended Roles" onClick={handleClick}/>
-        <Card name="Web Links & Resources" onClick={handleClick}/> */}
-
         {/* Trying new stuff */}
         {/* <Card name="Category" onClick={() => handleClick(setCategoryHidden)}/>
         <Card name="Description" onClick={() => handleClick(setDescHidden)}/>
@@ -175,8 +164,9 @@ export default function InternshipCards() {
         </button>
       </div>
       <div>
-        {/* UPDATES -  solution to render left card component with lesser code */}
+        {/* UPDATES -  solution to render right card desc component with lesser code */}
         {hidden ? <CardComponent /> : null}
+        {/* <CardDesc cardObjects={cardObjects} hidden={hidden}/> */}
 
         {/* <Category isHidden={categoryHidden}/>
         <Description isHidden={descHidden}/>

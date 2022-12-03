@@ -1,28 +1,35 @@
-import React, { useState} from 'react';
+import React from 'react';
 
 import './Category.css';
 
 import searchButton from '../../../images/search-normal.svg';
 
-export default function Category({isHidden}) {
+export default function Category() {
 
   return (
-    <div >
-      {!isHidden && 
-      <div className="container--category">
-        <p>Category</p>
-        <form className='category-form'>
-          <input type="text" placeholder='Search Category'/>
-          <img src={searchButton} alt=""/>
-        </form>
-      </div>}
-
-      
-      {/* <p>Category</p>
+    <div className="container--category">
+      <p>Category</p>
       <form className='category-form'>
         <input type="text" placeholder='Search Category'/>
         <img src={searchButton} alt=""/>
-      </form> */}
+      </form>
     </div>
+    // <div >
+    //   {!isHidden && 
+    //   <div className="container--category">
+    //     <p>Category</p>
+    //     <form className='category-form'>
+    //       <input type="text" placeholder='Search Category'/>
+    //       <img src={searchButton} alt=""/>
+    //     </form>
+    //   </div>}
+
+      
+    //   {/* <p>Category</p>
+    //   <form className='category-form'>
+    //     <input type="text" placeholder='Search Category'/>
+    //     <img src={searchButton} alt=""/>
+    //   </form> */}
+    // </div>
   )
 }
