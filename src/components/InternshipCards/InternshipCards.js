@@ -18,7 +18,6 @@ import './InternshipCards.css';
 import addSquare from '../../images/add-square-purple.svg';
 
 export default function InternshipCards() {
-  // old code that works
   const [hidden, setHidden] = useState();
 
   const cardObjects = {

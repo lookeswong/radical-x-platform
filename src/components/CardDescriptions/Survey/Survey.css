@@ -1,0 +1,20 @@
+.container--survey {
+  background-color: var(--color-snow);
+  padding: 1em;
+  margin: 0.5em 0em 0em 1em;
+  border-radius: 1em;
+  min-height: 45vh;
+}
+
+.container--survey>button {
+  display: flex;
+  align-items: center;
+  border: 1px dashed var(--color-purple);
+  border-radius: 1em;
+  color: var(--color-purple);
+  background-color: transparent;
+  padding: 0.5em 1em;
+  gap: 0.5em;
+  font-size: 1rem;
+  font-weight: 500;
+}

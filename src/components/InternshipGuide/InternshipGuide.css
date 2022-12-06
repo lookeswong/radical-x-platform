@@ -1,0 +1,12 @@
+.container--internship-guide {
+  display: grid;
+  grid-template-columns: 45% 55%;
+}
+
+.container--guide-descriptions {
+  background-color: var(--color-snow);
+  margin: 0.5em 0em 0em 1em;
+  padding: 1em;
+  border-radius: 1em;
+  height: fit-content;
+}

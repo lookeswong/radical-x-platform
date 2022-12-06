@@ -1,0 +1,4 @@
+.container--internship-survey {
+  display: grid;
+  grid-template-columns: 45% 55%;
+}

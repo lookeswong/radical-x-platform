@@ -1,0 +1,4 @@
+.container--internship-setting {
+  display: grid;
+  grid-template-columns: 45% 55%;
+}

@@ -1,0 +1,27 @@
+.guide-desc>p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.guide-desc-form {
+  display: flex;
+  margin: 1em 0em;
+  align-items: center;
+}
+
+.guide-desc-form>img {
+  position: relative;
+  right: 2.5em;
+}
+
+.guide-desc-form>input {
+  background-color: var(--color-gray-10);
+  color: rgba(47, 48, 49, 0.54);
+  font-family: "Space Grotesk", sans-serif;
+  border: 1px solid var(--color-field-stroke);
+  border-radius: 0.8em;
+  padding: 1em 1em;
+  width: 100%;
+  font-size: 1rem;
+}

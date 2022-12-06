@@ -6,12 +6,6 @@ import menuLogo from '../../images/menu.svg';
 import rightArrow from '../../images/arrow-right-internship.svg';
 
 export default function Card({name, onClick}) {
-  
-  // const [hidden, setHidden] = useState(true);
-
-  // const handleClick = () => {
-  //   setHidden(prevState => !prevState)
-  // }
 
   return (
     <div className='container--card'>
