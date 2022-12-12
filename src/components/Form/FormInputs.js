@@ -5,6 +5,8 @@ import InternshipSetting from  "../InternshipSetting/InternshipSetting";
 import InternshipSurvey from "../InternshipSurvey/InternshipSurvey";
 import useFormContext from "../../hooks/useFormContext";
 
+import './FormInputs.css';
+
 export default function FormInputs() {
   const { page } = useFormContext();
 
@@ -16,7 +18,7 @@ export default function FormInputs() {
   }
 
   return (
-    <div>
+    <div className="form-inputs">
       {display[page]}
     </div>
   )

@@ -23,8 +23,17 @@ export const FormProvider = ({children}) => {
     links: "",
   })
 
+  const disablePrev = page === 0;
+
+  // work on next button - only allow to click after fill up all the form;
+  const disableNext = (page === Object.keys(title).length - 1);
+
+  const nextHide = page === Object.keys(title).length - 1 && "remove-button";
+
+  const submitHide = page !== Object.keys(title).length - 1 && "remove-button";
+
   return (
-    <FormContext.Provider value={{ title, page, setPage, data, setData}}>
+    <FormContext.Provider value={{ title, page, setPage, data, setData, disablePrev, disableNext, nextHide, submitHide}}>
       {children}
     </FormContext.Provider>
   )

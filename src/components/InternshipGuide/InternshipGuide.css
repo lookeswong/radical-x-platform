@@ -1,6 +1,7 @@
 .container--internship-guide {
   display: grid;
   grid-template-columns: 45% 55%;
+  margin-right: 1em;
 }
 
 .container--guide-descriptions {
