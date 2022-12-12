@@ -6,21 +6,27 @@ export default function Setting({name}) {
   return (
     <div className='container--setting'>
       <p>Internship URL</p>
-      <form className='category-form'>
+      <div className='category-form'>
         <input type="text" placeholder='radicalx-internship-url'/>
-      </form>
+      </div>
       <p>Access</p>
-      <form className=''>
-        <input type="radio" name="intern_type" id='private' value="Private"/>
-        <label for="private">Private Internship</label><br/>
-        <input type="radio" name="intern_type" id='hidden' value="Hidden"/>
-        <label for="hidden">Hidden Internship</label>
-      </form>
+      <div className=''>
+        <label for="private" className='container'>Private Internship
+          <input type="radio" name="intern_type" id='private' value="Private"/>
+          <span className='checkmark'></span>
+        </label>
+        <label for="hidden" className='container'>Hidden Internship
+          <input type="radio" name="intern_type" id='hidden' value="Hidden"/>
+          <span className='checkmark'></span>
+        </label>
+      </div>
       <p>Security</p>
-      <form className=''>
-        <input type="checkbox" id='disable' value="Disable"/>
-        <label for="disable">Disable</label><br/>
-      </form>
+      <div className=''>
+        <label for="disable" className='container'>Disable
+          <input type="checkbox" id='disable' value="Disable"/>
+          <span className='checkmark'></span>
+        </label>
+      </div>
     </div>
   )
 }
