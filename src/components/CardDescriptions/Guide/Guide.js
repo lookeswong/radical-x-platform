@@ -7,7 +7,7 @@ import closeIcon from '../../../images/close.svg';
 import documentIcon from '../../../images/document-upload.svg';
 import searchButton from '../../../images/search-normal.svg';
 
-export default function Guide() {
+export default function Guide({name}) {
   // React Dropzone set up code - refer to documentation (https://react-dropzone.js.org/#src)
   const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
   const files = acceptedFiles.map(file => (
@@ -19,11 +19,11 @@ export default function Guide() {
 
   return (
     <div className='guide-desc'>
-      <p>Brief</p>
-      <form className='guide-desc-form'>
+      <p>{name}</p>
+      <div className='guide-desc-form'>
         <input type="text" placeholder='Description'/>
         <img src={searchButton} alt=""/>
-      </form>
+      </div>
       <div>
         <div {...getRootProps({className: 'dropzone'})}>
           <input {...getInputProps()}/>

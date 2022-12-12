@@ -24,3 +24,18 @@
 .expand-content {
   margin-top: 1.5em;
 }
+
+.add-inner-button {
+  border: 1px dashed var(--color-purple);
+  border-radius: 1em;
+  background-color: transparent;
+  color: var(--color-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 98%;
+  margin: 0.5em 0.5em;
+  padding: 1em 1em;
+  cursor: pointer;
+}
