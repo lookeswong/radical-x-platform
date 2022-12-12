@@ -28,7 +28,7 @@ export default function InternshipGuide() {
   // Mapping card objects to keys
   const ExpandCardObjectKeys = Object.keys(mockCard);
 
-  const SubCardComponent = mockCard[isExpanded] ? mockCard[isExpanded].subComponent : null;
+  const subCardComponent = mockCard[isExpanded] ? mockCard[isExpanded].subComponent : null;
 
   const handleClick = (name) => {
     if (mockCard[name]) {
@@ -37,7 +37,9 @@ export default function InternshipGuide() {
     console.log(isExpanded)
   };
 
-  // const cardObjectValues = Object.values(mockCard);
+  const cardObjectValues = Object.values(mockCard);
+
+  const removeBackground = isExpanded ? null : 'remove-background';
 
   return (
     <div className='container--internship-guide'>
@@ -58,7 +60,7 @@ export default function InternshipGuide() {
           Add Chapter
         </button>
       </div>
-      <div className='container--guide-descriptions'>
+      <div className={`container--guide-descriptions ${removeBackground}`}>
         {/* <Guide subComponent={mockCard.overview.subComponent}/>
         <Guide subComponent={mockCard.schedule.subComponent}/>
         <Guide subComponent={mockCard.milestones.subComponent}/> */}
@@ -67,7 +69,7 @@ export default function InternshipGuide() {
           return innerguide.subComponent.map(subcomp => <Guide key={subcomp} name={subcomp}/>)
         })} */}
 
-        {SubCardComponent.map((subCard) => <Guide key={subCard} name={subCard}/>)}
+        {isExpanded && subCardComponent.map((subCard) => <Guide key={subCard} name={subCard}/>)}
       </div>
     </div>
   )

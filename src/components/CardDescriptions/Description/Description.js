@@ -16,9 +16,9 @@ export default function Description() {
     // </div>
     <div className='container--description'>
       <p>Description</p>
-      <form className='description-form'>
+      <div className='description-form'>
         <textarea placeholder='Description'/>
-      </form>
+      </div>
     </div>
   )
 }

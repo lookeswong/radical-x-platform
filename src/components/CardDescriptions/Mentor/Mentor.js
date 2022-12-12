@@ -15,7 +15,7 @@ export default function Mentor({isHidden}) {
           <img src={imageIcon} alt=""/>
         </div>
       </div>
-      <form className='mentor-form'>
+      <div className='mentor-form'>
         <div className='mentor-form-upper'>
           <div className='name-input'>
             <img src={profileIcon} alt=""/>
@@ -30,7 +30,7 @@ export default function Mentor({isHidden}) {
           <img src={linkIcon} alt=""/>
           <input type="text" placeholder='LinkedIn URL (optional)'/>
         </div>
-      </form>
+      </div>
     </div>
     // <div>
     //   {!isHidden && 

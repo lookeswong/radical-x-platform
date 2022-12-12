@@ -8,7 +8,7 @@ export default function Location({isHidden}) {
   return (
     <div className="container--location">
       <p>Location</p>
-      <form className='location-form'>
+      <div className='location-form'>
         <img src={locationIcon} alt="" className="location-icon"/>
         <select>
           <option value="" selected disale hidden>Select Location</option>
@@ -21,7 +21,7 @@ export default function Location({isHidden}) {
           <option value="chicago">Chicago</option>
         </select>
         <img src={arrowDownIcon} alt="" className='arrow-icon'/>
-      </form>
+      </div>
     </div>
     // <div >
     //   {!isHidden && 

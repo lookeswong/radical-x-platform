@@ -16,9 +16,9 @@ export default function Benefits() {
     // </div>
     <div className='container--benefits'>
       <p>Benefits</p>
-      <form className='benefits-form'>
+      <div className='benefits-form'>
         <textarea placeholder='Description'/>
-      </form>
+      </div>
     </div>
   )
 }

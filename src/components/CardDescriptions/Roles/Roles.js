@@ -10,11 +10,11 @@ export default function Roles({isHidden}) {
   return (
     <div className="container--roles">
       <p>Recommended Roles</p>
-      <form className='roles-form'>
+      <div className='roles-form'>
         <img src={linkIcon} alt="" className='link-icon'/>
         <input type="text" placeholder='Add URL'/>
         <img src={searchButton} alt="" className='search-icon'/>
-      </form>
+      </div>
       <button>
         <img src={addIcon} alt=""/>
         <p>Add URL</p>
