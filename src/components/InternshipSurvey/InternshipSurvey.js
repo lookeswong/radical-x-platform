@@ -3,6 +3,7 @@ import Card from '../Card/Card';
 import Survey from '../CardDescriptions/Survey/Survey';
 
 import './InternshipSurvey.css';
+import addItemIcon from '../../images/additem.svg';
 
 export default function InternshipSurvey() {
   const [hidden, setHidden] = useState();
@@ -36,6 +37,10 @@ export default function InternshipSurvey() {
             onClick={() => handleClick(itemKey)}
           />
         ))}
+        <button type="button" className='add-survey-button'>
+          <img src={addItemIcon} alt=''/>
+          Add Survey
+        </button>
         {/* <Card name="Survey 1"/>
         <Card name="Survey 2"/> */}
       </div>

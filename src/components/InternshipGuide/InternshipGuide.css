@@ -13,9 +13,12 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 92%;
-  margin-top: 0.5em;
-  margin-left: 3em;
+  width: 90%;
+  position: relative;
+  left: 25px;
+  /* margin-top: 0.5em;
+  margin-left: 3em; */
+  margin: 0.5em 1em;
   padding: 1em 1em;
   cursor: pointer;
 }
