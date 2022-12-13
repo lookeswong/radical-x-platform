@@ -13,15 +13,27 @@ export const FormProvider = ({children}) => {
   const [page, setPage] = useState(0);
 
   const [data, setData] = useState({
-    category: "",
-    description: "",
-    location: "",
-    benefits: "",
-    intro: false,
-    mentor: "",
-    roles: "",
-    links: "",
-  })
+    descCategory: "",
+    descDescription: "",
+    descLocation: "",
+    descBenefits: "",
+    descIntro: "",
+    descMentorName: "",
+    descMentorEmail: "",
+    descMentorLinkedIn: "",
+    descRoles: "",
+    descWebLinks: "",
+    surSurvey: "",
+  });
+
+  const handleChange = e => {
+    const type = e.target.type;
+    const name = e.target.name;
+
+    const value = type === "checkbox" ? e.target.checked : e.target.value;
+
+    setData((prevData) => ({...prevData, [name]: value}))
+  }
 
   const disablePrev = page === 0;
 
@@ -33,7 +45,7 @@ export const FormProvider = ({children}) => {
   const submitHide = page !== Object.keys(title).length - 1 && "remove-button";
 
   return (
-    <FormContext.Provider value={{ title, page, setPage, data, setData, disablePrev, disableNext, nextHide, submitHide}}>
+    <FormContext.Provider value={{ title, page, setPage, data, setData, handleChange, disablePrev, disableNext, nextHide, submitHide}}>
       {children}
     </FormContext.Provider>
   )

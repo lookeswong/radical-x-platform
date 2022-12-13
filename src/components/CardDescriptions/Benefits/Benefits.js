@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import useFormContext from "../../../hooks/useFormContext";
 
 import './Benefits.css';
 
 export default function Benefits() {
+  const { data, handleChange } = useFormContext();
+
   return (
     // <div>
     //   {!isHidden &&
@@ -17,7 +20,7 @@ export default function Benefits() {
     <div className='container--benefits'>
       <p>Benefits</p>
       <div className='benefits-form'>
-        <textarea placeholder='Description'/>
+        <textarea placeholder='Description' id='descBenefits' name='descBenefits' value={data.descBenefits} onChange={handleChange}/>
       </div>
     </div>
   )

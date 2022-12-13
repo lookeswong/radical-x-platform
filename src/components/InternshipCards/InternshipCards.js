@@ -1,7 +1,7 @@
 import React, {useState } from 'react';
 import Card from '../Card/Card';
+import useFormContext from '../../hooks/useFormContext';
 import CardDesc from '../CardDescriptions/CardDesc';
-
 
 // Hidden components
 import Category from '../CardDescriptions/Category/Category';
@@ -20,38 +20,48 @@ import addSquare from '../../images/add-square-purple.svg';
 export default function InternshipCards() {
   const [hidden, setHidden] = useState();
 
+  const { data } = useFormContext();
+
   const cardObjects = {
     category: {
       name: "Category",
       component: Category,
+      formData: data.descCategory,
     },
     description: {
       name: "Description",
       component: Description,
+      formData: data.descDescription
     },
     location: {
       name: "Location",
       component: Location,
+      formData: data.descLocation
     },
     benefits: {
       name: "Benefits",
       component: Benefits,
+      formData: data.descBenefits
     },
     intro: {
       name: "Intro Video",
       component: IntroVideo,
+      formData: data.descIntro
     },
     mentor: {
       name: "Mentor Details",
       component: Mentor,
+      formData: [data.descMentorName, data.descMentorEmail, data.descMentorLinkedIn]
     },
     roles: {
       name: "Recommended Roles",
       component: Roles,
+      formData: data.descRoles
     },
     webLinks: {
       name: "Web Links & Resources",
       component: WebLinks,
+      formData: data.descWebLinks
     },
   };
 
@@ -145,6 +155,7 @@ export default function InternshipCards() {
             key={itemKey}
             name={cardObjects[itemKey].name}
             onClick={() => handleClick(itemKey)}
+            formData={cardObjects[itemKey].formData}
           />
         ))}
         {/* Trying new stuff */}

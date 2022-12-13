@@ -1,16 +1,19 @@
 import React from 'react';
+import useFormContext from "../../../hooks/useFormContext";
 
 import './Location.css';
 import locationIcon from '../../../images/location.svg';
 import arrowDownIcon from '../../../images/arrow-down.svg';
 
-export default function Location({isHidden}) {
+export default function Location() {
+  const { data, handleChange } = useFormContext();
+
   return (
     <div className="container--location">
       <p>Location</p>
       <div className='location-form'>
         <img src={locationIcon} alt="" className="location-icon"/>
-        <select>
+        <select id='descLocation' name='descLocation' value={data.descLocation} onChange={handleChange}>
           <option value="" selected disale hidden>Select Location</option>
           <option value="new-york">New York</option>
           <option value="london">London</option>
