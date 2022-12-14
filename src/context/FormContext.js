@@ -23,7 +23,8 @@ export const FormProvider = ({children}) => {
     descMentorLinkedIn: "",
     descRoles: "",
     descWebLinks: "",
-    surSurvey: "",
+    surSurvey1: "",
+    surSurvey2: "",
   });
 
   const handleChange = e => {
