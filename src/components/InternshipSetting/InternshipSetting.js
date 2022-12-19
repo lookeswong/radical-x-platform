@@ -1,26 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../Card/Card';
 import Setting from '../CardDescriptions/Setting/Setting';
+import useFormContext from "../../hooks/useFormContext";
 
 import './InternshipSetting.css';
 
 export default function InternshipSetting() {
+
+  const [hidden, setHidden] = useState();
+
+  const { data } = useFormContext();
+
+  const settingObjects = {
+    setting1: {
+      name: "Basic Setting",
+      formName: "settingBasic",
+      formData: data.settingBasic,
+    },
+    setting2: {
+      name: "Hero Image",
+      formName: "settingHero",
+      formData: data.settingHero,
+    }
+  };
+
+  const handleClick = (setting) => {
+    if (settingObjects[setting].name) {
+      setHidden(setting);
+    }
+  };
+
+  const SettingObjectKeys = Object.keys(settingObjects);
+
+  const settingFormName = settingObjects[hidden] ? settingObjects[hidden].formName : null;
+  const settingFormData = settingObjects[hidden] ? settingObjects[hidden].formData : null;
+
   return (
     <div className='container--internship-setting'>
       <div>
-        {/* {SurveyObjectKeys.map((itemKey) => (
+        {SettingObjectKeys.map((itemKey) => (
           <Card 
             key={itemKey}
-            name={surveyObjects[itemKey].name}
+            name={settingObjects[itemKey].name}
             onClick={() => handleClick(itemKey)}
           />
-        ))} */}
-        <Card name="Basic Setting"/>
-        <Card name="Hero Image"/>
+        ))}
       </div>
       <div className='setting-desc'>
-        {/* {hidden ? <Survey name={surveyNo}/> : null} */}
-        <Setting name="Internship URL"/>
+        {hidden ? <Setting formName={settingFormName} formData={settingFormData}/> : null}
       </div>
     </div>
   )
