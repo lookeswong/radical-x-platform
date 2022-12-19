@@ -1,28 +1,21 @@
-import React, { useState} from 'react';
+import React from 'react';
 
-import searchButton from '../../images/search-normal.svg';
+import Category from '../CardDescriptions/Category/Category';
+import Description from '../CardDescriptions/Description/Description';
+import Location from '../CardDescriptions/Locations/Location';
+import Benefits from '../CardDescriptions/Benefits/Benefits';
+import Roles from '../CardDescriptions/Roles/Roles';
+import WebLinks from '../CardDescriptions/WebLinks/WebLinks';
+import IntroVideo from '../CardDescriptions/IntroVideo/IntroVideo';
+import Mentor from '../CardDescriptions/Mentor/Mentor';
 
-export default function CardDesc({title, isHidden, handleClick}) {
+export default function CardDesc({cardObjects, hidden}) {
+
+  // cardObjects[hidden] ? cardObjects[hidden].component : null;
 
   return (
-    <div >
-      {/* {!isHidden && 
-      <div className="container--category">
-        <p>Category</p>
-        <form className='category-form'>
-          <input type="text" placeholder='Search Category'/>
-          <img src={searchButton} alt=""/>
-        </form>
-      </div>} */}
-      {isHidden ? null : 
-        <div onClick={handleClick}>
-          <p>{title}</p>
-          <form className='category-form'>
-            <input type="text" placeholder='Search Category'/>
-            <img src={searchButton} alt=""/>
-          </form>
-        </div>
-      }
+    <div>
+      {cardObjects[hidden] ? cardObjects[hidden].component : null}
     </div>
   )
 }

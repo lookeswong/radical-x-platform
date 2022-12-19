@@ -1,5 +1,7 @@
 import React, {useState } from 'react';
 import Card from '../Card/Card';
+import useFormContext from '../../hooks/useFormContext';
+import CardDesc from '../CardDescriptions/CardDesc';
 
 // Hidden components
 import Category from '../CardDescriptions/Category/Category';
@@ -16,27 +18,82 @@ import './InternshipCards.css';
 import addSquare from '../../images/add-square-purple.svg';
 
 export default function InternshipCards() {
-  // old code that works
-  // const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState();
 
-  // NEW - implementing hidden seperately
-  const [categoryHidden, setCategoryHidden] = useState(true);
-  const [descHidden, setDescHidden] = useState(true);
-  const [locationHidden, setLocationHidden] = useState(true);
-  const [benefitsHidden, setBenefitsHidden] = useState(true);
-  const [introVidHidden, setIntroVidHidden] = useState(true);
-  const [mentorHidden, setMentorHidden] = useState(true);
-  const [rolesHidden, setRolesHidden] = useState(true);
-  const [webLinkHidden, setWebLinkHidden] = useState(true);
+  const { data } = useFormContext();
 
-  const handleClick = (cardDescFunc) => {
-    // prevFunc(prevState => !prevState)
-    cardDescFunc(prevState => {
-      console.log(prevState)
-      return !prevState
-    });
-    // prevFunc = cardDescFunc()
-  }
+  const cardObjects = {
+    category: {
+      name: "Category",
+      component: Category,
+      formData: data.descCategory,
+    },
+    description: {
+      name: "Description",
+      component: Description,
+      formData: data.descDescription
+    },
+    location: {
+      name: "Location",
+      component: Location,
+      formData: data.descLocation
+    },
+    benefits: {
+      name: "Benefits",
+      component: Benefits,
+      formData: data.descBenefits
+    },
+    intro: {
+      name: "Intro Video",
+      component: IntroVideo,
+      formData: data.descIntro
+    },
+    mentor: {
+      name: "Mentor Details",
+      component: Mentor,
+      formData: [data.descMentorName, data.descMentorEmail, data.descMentorLinkedIn]
+    },
+    roles: {
+      name: "Recommended Roles",
+      component: Roles,
+      formData: data.descRoles
+    },
+    webLinks: {
+      name: "Web Links & Resources",
+      component: WebLinks,
+      formData: data.descWebLinks
+    },
+  };
+
+  // Mapping card objects to keys
+  const CardObjectKeys = Object.keys(cardObjects);
+
+  const CardComponent = cardObjects[hidden] ? cardObjects[hidden].component : null;
+
+  const handleClick = (name) => {
+    if (cardObjects[name].component) {
+      setHidden(name);
+    }
+  };
+
+  // // NEW - implementing hidden seperately
+  // const [categoryHidden, setCategoryHidden] = useState(true);
+  // const [descHidden, setDescHidden] = useState(true);
+  // const [locationHidden, setLocationHidden] = useState(true);
+  // const [benefitsHidden, setBenefitsHidden] = useState(true);
+  // const [introVidHidden, setIntroVidHidden] = useState(true);
+  // const [mentorHidden, setMentorHidden] = useState(true);
+  // const [rolesHidden, setRolesHidden] = useState(true);
+  // const [webLinkHidden, setWebLinkHidden] = useState(true);
+
+  // const handleClick = (cardDescFunc) => {
+  //   // prevFunc(prevState => !prevState)
+  //   cardDescFunc(prevState => {
+  //     console.log(prevState)
+  //     return !prevState
+  //   });
+  //   // prevFunc = cardDescFunc()
+  // }
 
   // // Mock data objects
   // const [internshipDescriptions, setInternshipDescriptions] = useState([
@@ -92,26 +149,24 @@ export default function InternshipCards() {
     // Old code that works!
     <div className='container--internship-description'>
       <div>
-        {/* Old code that render a list of card components */}
-        {/* {internshipElements}  */}
-        {/* <Card name="Category" onClick={handleClick}/>
-        <Card name="Description" onClick={handleClick}/>
-        <Card name="Location" onClick={handleClick}/>
-        <Card name="Benefits" onClick={handleClick}/>
-        <Card name="Intro Video" onClick={handleClick}/>
-        <Card name="Mentor Details" onClick={handleClick}/>
-        <Card name="Recommended Roles" onClick={handleClick}/>
-        <Card name="Web Links & Resources" onClick={handleClick}/> */}
-
+        {/* UPDATES -  solution to render left card component with lesser code */}
+        {CardObjectKeys.map((itemKey) => (
+          <Card 
+            key={itemKey}
+            name={cardObjects[itemKey].name}
+            onClick={() => handleClick(itemKey)}
+            formData={cardObjects[itemKey].formData}
+          />
+        ))}
         {/* Trying new stuff */}
-        <Card name="Category" onClick={() => handleClick(setCategoryHidden)}/>
+        {/* <Card name="Category" onClick={() => handleClick(setCategoryHidden)}/>
         <Card name="Description" onClick={() => handleClick(setDescHidden)}/>
         <Card name="Location" onClick={() => handleClick(setLocationHidden)}/>
         <Card name="Benefits" onClick={() => handleClick(setBenefitsHidden)}/>
         <Card name="Intro Video" onClick={() => handleClick(setIntroVidHidden)}/>
         <Card name="Mentor Details" onClick={() => handleClick(setMentorHidden)}/>
         <Card name="Recommended Roles" onClick={() => handleClick(setRolesHidden)}/>
-        <Card name="Web Links & Resources" onClick={() => handleClick(setWebLinkHidden)}/>
+        <Card name="Web Links & Resources" onClick={() => handleClick(setWebLinkHidden)}/> */}
         {/* Add-More button*/}
         <button className='add-internship-button'>
           <img src={addSquare} alt=""/>
@@ -119,14 +174,18 @@ export default function InternshipCards() {
         </button>
       </div>
       <div>
-        <Category isHidden={categoryHidden}/>
+        {/* UPDATES -  solution to render right card desc component with lesser code */}
+        {hidden ? <CardComponent /> : null}
+        {/* <CardDesc cardObjects={cardObjects} hidden={hidden}/> */}
+
+        {/* <Category isHidden={categoryHidden}/>
         <Description isHidden={descHidden}/>
         <Location isHidden={locationHidden}/>
         <Benefits isHidden={benefitsHidden}/>
         <IntroVideo isHidden={introVidHidden}/>
         <Mentor isHidden={mentorHidden}/>
         <Roles isHidden={rolesHidden}/>
-        <WebLinks isHidden={webLinkHidden}/>
+        <WebLinks isHidden={webLinkHidden}/> */}
       </div>
     </div>
   )

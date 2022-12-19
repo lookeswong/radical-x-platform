@@ -3,17 +3,27 @@
   align-items: center;
 }
 
-
-.card-text {
+.card {
   background-color: var(--color-snow);
   padding: 1em 1em;
   border: 1px solid var(--color-gray-5);
   border-radius: 1em;
-  width: 100%;
+  width: 90%;
   margin: 0.5em 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.card-text, .card-text > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.remove-tick img {
+  display: none;
 }
 
 .selected-card {

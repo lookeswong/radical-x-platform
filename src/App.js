@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
 import AddNewInternship from "./pages/AddNewInternship";
 
-
 function App() {
   return (
     // <div>
