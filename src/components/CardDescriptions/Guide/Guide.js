@@ -1,4 +1,5 @@
 import React from 'react';
+import useFormContext from "../../../hooks/useFormContext";
 import { useDropzone } from 'react-dropzone';
 
 import './Guide.css';
@@ -7,7 +8,9 @@ import closeIcon from '../../../images/close.svg';
 import documentIcon from '../../../images/document-upload.svg';
 import searchButton from '../../../images/search-normal.svg';
 
-export default function Guide({name}) {
+export default function Guide({name, guide, formData}) {
+  const { handleChange } = useFormContext();
+
   // React Dropzone set up code - refer to documentation (https://react-dropzone.js.org/#src)
   const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
   const files = acceptedFiles.map(file => (
@@ -21,7 +24,8 @@ export default function Guide({name}) {
     <div className='guide-desc'>
       <p>{name}</p>
       <div className='guide-desc-form'>
-        <input type="text" placeholder='Description'/>
+        {/* <input type="text" placeholder='Description'/> */}
+        <input type="text" placeholder='Description' id={guide} name={guide} value={formData} onChange={handleChange}/>
         <img src={searchButton} alt=""/>
       </div>
       <div>

@@ -21,6 +21,18 @@
   align-items: center;
 }
 
+.card-text,
+.card-text>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.remove-tick img {
+  display: none;
+}
+
 .expand-content {
   margin-top: 1.5em;
 }

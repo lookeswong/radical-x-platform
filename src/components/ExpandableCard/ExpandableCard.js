@@ -6,8 +6,16 @@ import './ExpandableCard.css';
 import menuLogo from '../../images/menu.svg';
 import rightArrow from '../../images/arrow-right-internship.svg';
 import addSquare from '../../images/add-square-purple.svg';
+import tickCircle from '../../images/tick-circle.svg';
 
-export default function ExpandableCard({name, subComponent, onClick}) {
+export default function ExpandableCard({name, subComponent, formData, onClick}) {
+
+  const requireData = formData;
+  // console.log(requireData)
+
+  let canSubmit = [...Object.values(requireData)].every(Boolean);
+
+  let isFilled = canSubmit ? '' : 'remove-tick'; 
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,7 +37,12 @@ export default function ExpandableCard({name, subComponent, onClick}) {
         className='expand-card'
       >
         <motion.div layout="position" className='expand-card-text'>
-          <motion.p layout="position">{name}</motion.p>
+          <div className='card-text'>
+            <motion.p layout="position">{name}</motion.p>
+            <div className={isFilled}>
+              <img src={tickCircle} alt=""/>
+            </div>
+          </div>
           <img src={rightArrow} alt=""/>
         </motion.div>
         {isOpen && 

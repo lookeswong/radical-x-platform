@@ -23,8 +23,18 @@ export const FormProvider = ({children}) => {
     descMentorLinkedIn: "",
     descRoles: "",
     descWebLinks: "",
+    guideOvBrief: "",
+    guideOvRequirement: "",
+    guideOverviewMilestone: "",
+    guideScDuration: "",
+    guideScTimeline: "",
+    guideScDeliverable: "",
+    guideMiResources: "",
+    guideMiEvents: "",
     surSurvey1: "",
     surSurvey2: "",
+    settingBasic: "",
+    settingHero: "",
   });
 
   const handleChange = e => {
