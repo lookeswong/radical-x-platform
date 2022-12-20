@@ -6,23 +6,23 @@ export const FormProvider = ({children}) => {
   const title = {
     0: 'Internship Description',
     1: 'Internship Guide',
-    2: 'Internship Surveys',
-    3: 'Internship Settings',
+    2: 'Surveys',
+    3: 'Settings',
   }
 
   const [page, setPage] = useState(0);
 
   const [data, setData] = useState({
-    descCategory: "",
-    descDescription: "",
-    descLocation: "",
-    descBenefits: "",
-    descIntro: "",
-    descMentorName: "",
-    descMentorEmail: "",
-    descMentorLinkedIn: "",
-    descRoles: "",
-    descWebLinks: "",
+    descCategory: "sda",
+    descDescription: "asd",
+    descLocation: "aasd",
+    descBenefits: "aasd",
+    descIntro: "aasd",
+    descMentorName: "aasd",
+    descMentorEmail: "aasd",
+    descMentorLinkedIn: "aasd",
+    descRoles: "aasd",
+    descWebLinks: "aasd",
     guideOvBrief: "",
     guideOvRequirement: "",
     guideOverviewMilestone: "",

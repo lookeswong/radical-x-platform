@@ -6,6 +6,7 @@ import ProgressBar from '../ProgressBar/ProgressBar';
 
 export default function Form() {
   const { 
+    title,
     page, 
     setPage, 
     data,
@@ -42,7 +43,10 @@ export default function Form() {
           nextHide={nextHide}
           canSubmit={canSubmit}
         />
-        <ProgressBar />
+        <ProgressBar 
+          page={page}
+          title={title}
+        />
         <FormInputs />
       </form>
     </div>
