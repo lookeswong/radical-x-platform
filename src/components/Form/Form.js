@@ -3,10 +3,6 @@ import useFormContext from '../../hooks/useFormContext';
 import FormInputs from './FormInputs';
 import Header from '../Header/Header';
 import ProgressBar from '../ProgressBar/ProgressBar';
-import { Link } from "react-router-dom";
-
-import leftArrow from "../../images/arrow-left.svg";
-import rightArrow from "../../images/arrow-right.svg";
 
 export default function Form() {
   const { 
@@ -17,6 +13,7 @@ export default function Form() {
     disableNext,
     nextHide,
     submitHide,
+    canSubmit
   } = useFormContext();
 
   const handlePrev = () => {
@@ -43,6 +40,7 @@ export default function Form() {
           disableNext={disableNext} 
           submitHide={submitHide}
           nextHide={nextHide}
+          canSubmit={canSubmit}
         />
         <ProgressBar />
         <FormInputs />

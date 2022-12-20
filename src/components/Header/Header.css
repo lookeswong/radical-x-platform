@@ -19,21 +19,21 @@
   width: 15em;
 }
 
-/* .continue-button > button {
+.right-button > .remove-button {
+  display: none;
+}
+
+.continue-button {
   background-color: var(--color-gray-50);
   color: var(--color-gray-3);
   border: none;
   border-radius: 0.5em;
   padding: 0.8em 0.8em;
-} */
-
-.right-button > .remove-button {
-  display: none;
 }
 
-.continue-button{
-  background-color: var(--color-gray-50);
-  color: var(--color-gray-3);
+.continue-success {
+  background-color: var(--color-purple);
+  color: var(--color-snow);
   border: none;
   border-radius: 0.5em;
   padding: 0.8em 0.8em;
@@ -47,7 +47,7 @@
 } */
 
 .back-button>button,
-.continue-button {
+.continue-button, .continue-success {
   /* Button position */
   display: flex;
   align-items: center;
