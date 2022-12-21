@@ -3,7 +3,7 @@
   align-items: center;
 }
 
-.card {
+.card, .active-card {
   background-color: var(--color-snow);
   padding: 1em 1em;
   border: 1px solid var(--color-gray-5);
@@ -13,6 +13,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.active-card {
+  border: 2px solid var(--color-purple);
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card-text, .card-text > div {

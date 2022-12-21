@@ -29,22 +29,5 @@ export default function IntroVideo() {
         <ul className='file-list'>{files}</ul>
       </aside>
     </div>
-    // <div>
-    //   {!isHidden && 
-    //   <div className="container--intro">
-    //     <p>Intro Video</p>
-    //     {/* <form className='category-intro'>
-    //       <input type="file"/>
-    //     </form> */}
-    //     <div {...getRootProps({className: 'dropzone'})}>
-    //       <input {...getInputProps()}/>
-    //       <p>Drag n drop to upload your video</p>
-    //       <img src={documentIcon}/>
-    //     </div>
-    //     <aside>
-    //       <ul className='file-list'>{files}</ul>
-    //     </aside>
-    //   </div>}
-    // </div>
   )
 }

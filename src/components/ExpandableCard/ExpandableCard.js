@@ -5,14 +5,17 @@ import InnerCard from '../InternshipGuide/InnerCard';
 import './ExpandableCard.css';
 import menuLogo from '../../images/menu.svg';
 import rightArrow from '../../images/arrow-right-internship.svg';
+import rightArrowPurple from '../../images/arrow-right-purple.svg';
 import addSquare from '../../images/add-square-purple.svg';
 import tickCircle from '../../images/tick-circle.svg';
 
-export default function ExpandableCard({name, subComponent, formData, onClick}) {
+export default function ExpandableCard({name, subComponent, formData, currentSelected, onClick}) {
 
+  const selectedGuide = currentSelected === name ? 'active-expand-card' : 'expand-card';
+  const selectedArrow = currentSelected === name ? rightArrowPurple : rightArrow;
+
+  // check if all inner field is filled
   const requireData = formData;
-  // console.log(requireData)
-
   let canSubmit = [...Object.values(requireData)].every(Boolean);
 
   let isFilled = canSubmit ? '' : 'remove-tick'; 
@@ -32,9 +35,8 @@ export default function ExpandableCard({name, subComponent, formData, onClick}) 
       <motion.div 
         layout 
         transition={{layout: {duration: 1, type:"spring"}}} 
-        // onClick={() => setIsOpen(!isOpen)} 
         onClick={buttonPressed}
-        className='expand-card'
+        className={`${selectedGuide}`}
       >
         <motion.div layout="position" className='expand-card-text'>
           <div className='card-text'>
@@ -43,7 +45,7 @@ export default function ExpandableCard({name, subComponent, formData, onClick}) 
               <img src={tickCircle} alt=""/>
             </div>
           </div>
-          <img src={rightArrow} alt=""/>
+          <img src={selectedArrow} alt=""/>
         </motion.div>
         {isOpen && 
           <motion.div 

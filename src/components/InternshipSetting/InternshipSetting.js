@@ -34,6 +34,7 @@ export default function InternshipSetting() {
 
   const settingFormName = settingObjects[hidden] ? settingObjects[hidden].formName : null;
   const settingFormData = settingObjects[hidden] ? settingObjects[hidden].formData : null;
+  const currentSelectedName = settingObjects[hidden] ? settingObjects[hidden].name : null;
 
   return (
     <div className='container--internship-setting'>
@@ -42,6 +43,7 @@ export default function InternshipSetting() {
           <Card 
             key={itemKey}
             name={settingObjects[itemKey].name}
+            currentSelected={currentSelectedName}
             onClick={() => handleClick(itemKey)}
           />
         ))}

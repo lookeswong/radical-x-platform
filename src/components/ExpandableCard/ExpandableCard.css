@@ -3,16 +3,21 @@
   align-items: baseline;
 }
 
-.expand-card {
+.expand-card, .active-expand-card {
   background-color: var(--color-snow);
   padding: 1em 1em;
   border: 1px solid var(--color-gray-5);
   border-radius: 1em;
   width:90%;
   margin: 0.5em 1em;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: flex-start; */
+}
+
+.active-expand-card {
+  border: 2px solid var(--color-purple);
+}
+
+.expand-card:hover {
+  transform: scale(1.05);
 }
 
 .expand-card-text {

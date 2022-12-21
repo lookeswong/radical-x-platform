@@ -10,7 +10,7 @@ export default function ProgressBar({page, title}) {
   return (
     <div className="container--progress-bar">
       {Object.keys(title).map((step, i) => (
-        <Progress name={title[step]} isCurrent={currentPage} current={i} page={page}/>
+        <Progress key={i} name={title[step]} isCurrent={currentPage} current={i} page={page}/>
       ))}
     </div>
   )

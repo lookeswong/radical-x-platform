@@ -43,6 +43,8 @@ export default function InternshipGuide() {
   const guideFormName = mockCard[isExpanded] ? mockCard[isExpanded].formName : null;
   const guideFormData = mockCard[isExpanded] ? mockCard[isExpanded].formData : null;
 
+  const currentSelectedGuide = mockCard[isExpanded] ? mockCard[isExpanded].name : null;
+
   // const subCardComponent = mockCard[isExpanded] ? mockCard[isExpanded].subComponent : null;
 
   const handleClick = (name) => {
@@ -63,6 +65,7 @@ export default function InternshipGuide() {
             name={mockCard[itemKey].name}
             subComponent={mockCard[itemKey].subComponent}
             formData={mockCard[itemKey].formData}
+            currentSelected={currentSelectedGuide}
             onClick={() => handleClick(itemKey)}
           />
         ))}

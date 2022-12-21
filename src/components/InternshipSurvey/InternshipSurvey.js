@@ -36,6 +36,8 @@ export default function InternshipSurvey() {
   const surveyQuestionNo = surveyObjects[hidden] ? surveyObjects[hidden].surveyQuestionNo : null;
   const surveyformData = surveyObjects[hidden] ? surveyObjects[hidden].formData : null;
 
+  const currentSelectedName = surveyObjects[hidden] ? surveyObjects[hidden].name : null;
+
   return (
     <div className='container--internship-survey'>
       <div>
@@ -44,6 +46,7 @@ export default function InternshipSurvey() {
             key={itemKey}
             name={surveyObjects[itemKey].name}
             formData={surveyObjects[itemKey].formData}
+            currentSelected={currentSelectedName}
             onClick={() => handleClick(itemKey)}
           />
         ))}
